@@ -1,0 +1,29 @@
+name: Code audit
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax-and-release-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python syntax
+        run: python -m compileall -q code run_pipeline.py tests
+      - name: Restricted-content audit
+        run: python -m unittest discover -s tests -v
+      - name: Pipeline manifest
+        run: python run_pipeline.py --dry-run
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "release"
+      - name: R syntax
+        shell: Rscript {0}
+        run: |
+          files <- list.files("code", pattern = "[.]R$", recursive = TRUE, full.names = TRUE)
+          invisible(lapply(files, parse))
+

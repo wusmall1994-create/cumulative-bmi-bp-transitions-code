@@ -1,0 +1,41 @@
+# Restricted cohort data and all derived participant-level files
+data/
+outputs/
+results/
+scratch/
+*.csv
+*.tsv
+*.dta
+*.sav
+*.sas7bdat
+*.xpt
+*.rds
+*.RData
+*.Rhistory
+
+# Manuscripts and office documents are outside this code release
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
+# Local configuration and credentials
+.env
+*.env
+!.env.example
+*.key
+*.pem
+*token*
+*secret*
+
+# Runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.Rproj.user/
+.DS_Store
+Thumbs.db
+

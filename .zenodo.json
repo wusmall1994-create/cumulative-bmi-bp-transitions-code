@@ -1,0 +1,21 @@
+{
+  "title": "Analysis code for cumulative excess BMI burden and blood pressure transitions",
+  "description": "Versioned statistical analysis code for a harmonized longitudinal study of cumulative excess BMI burden and blood pressure progression and improvement across HRS, CHNS, and ELSA. No cohort data or manuscript files are included.",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {"name": "Wu, Xiaoxin"},
+    {"name": "Liang, Huadong"},
+    {"name": "Zheng, Zhimin"}
+  ],
+  "keywords": [
+    "cumulative BMI burden",
+    "hypertension",
+    "blood pressure transitions",
+    "HRS",
+    "CHNS",
+    "ELSA",
+    "meta-analysis"
+  ]
+}
+
