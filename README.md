@@ -1,5 +1,7 @@
 # Cumulative excess BMI burden and blood pressure transitions
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22347590.svg)](https://doi.org/10.5281/zenodo.22347590)
+
 This repository contains the statistical analysis code for a harmonized longitudinal study of cumulative excess BMI burden and blood pressure progression and improvement in the Health and Retirement Study (HRS), China Health and Nutrition Survey (CHNS), and English Longitudinal Study of Ageing (ELSA).
 
 Only code and documentation are included. No manuscript, raw cohort data, participant-level derived data, model outputs, credentials, local absolute paths, email addresses, telephone numbers, or other personal information are distributed here.
@@ -82,5 +84,4 @@ This research uses data from China Health and Nutrition Survey (CHNS). We thank 
 
 ## Citation and license
 
-Please cite the archived software release using `CITATION.cff`. The analysis code is released under the MIT License. The license applies only to this repository's code and does not apply to HRS, CHNS, ELSA, or any derived participant-level data.
-
+Please cite the archived software release using DOI [10.5281/zenodo.22347590](https://doi.org/10.5281/zenodo.22347590) or the metadata in `CITATION.cff`. The analysis code is released under the MIT License. The license applies only to this repository's code and does not apply to HRS, CHNS, ELSA, or any derived participant-level data.
