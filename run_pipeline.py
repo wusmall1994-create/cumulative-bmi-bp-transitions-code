@@ -26,6 +26,9 @@ STAGES = [
     ("robust-meta", ["Rscript", "code/meta/05_robust_meta_analysis.R"]),
     ("incremental-value", ["Rscript", "code/meta/06_incremental_value_analysis.R"]),
     ("method-sensitivity", ["Rscript", "code/meta/07_methodological_sensitivity.R"]),
+    ("prior-history", [sys.executable, "code/meta/08_build_prior_history.py"]),
+    ("interval-onset-prediction", ["Rscript", "code/meta/09_interval_onset_and_prediction.R"]),
+    ("prediction-intervals", ["Rscript", "code/meta/10_prediction_validation_intervals.R"]),
 ]
 
 
