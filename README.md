@@ -17,6 +17,11 @@ The numbered scripts reproduce the analysis in dependency order:
 5. `code/meta/03`–`05`: construct the dynamic transition datasets, fit progression/improvement models, and apply small-sample meta-analytic inference.
 6. `code/meta/06`: compare cumulative burden with baseline, last, mean, and time-weighted mean BMI.
 7. `code/meta/07`: run the prespecified methodological sensitivity analyses, including baseline blood pressure adjustment, CHNS-specific BMI thresholds, percentile-standardized probabilities, continuous blood pressure change, weighting sensitivity, and robustness exclusions.
+8. `code/meta/08`: construct private prior-hypertension history flags from authorized HRS, CHNS, and ELSA source files.
+9. `code/meta/09`: run starting-blood-pressure, common-unit, first-observed-event, model-check, destination, and paired prediction analyses.
+10. `code/meta/10`: calculate conditional validation intervals for out-of-fold prediction metrics and paired differences.
+
+Scripts 08–10 generate the analyses added for the BMC Cardiovascular Disorders submission. Participant identifiers and derived history files are written only to the ignored `BMI_BP_OUTPUT_DIR/submission_extensions` directory and must not be committed.
 
 These are transition-specific discrete-time models; the code does not claim a continuous-time Markov model.
 
@@ -34,6 +39,8 @@ BMI_BP_OUTPUT_DIR=/path/to/private/output   # optional
 ```
 
 The HRS builder expects the RAND longitudinal file, the 2022 cross-wave tracker, the public region file, and the 2014/2018/2022 RAND Fat Files in the relative layout documented at the top of `code/hrs/01_build_cohort.py`. The CHNS builder expects `pexam_00.sas7bdat`, `surveys_pub_12.sas7bdat`, `educ_12.sas7bdat`, and `mast_pub_12.sas7bdat`. The ELSA builder expects the Wave 2, 4, 6, and 8/9 nurse/core files, the Gateway harmonized file, and the public urban/rural file named in `code/elsa/01_build_cohort.py`.
+
+The prior-history extension additionally expects `randhrs1992_2022v1.dta` directly under `HRS_DATA_DIR`, and `gh_elsa_h.dta`, `wave_2_nurse_data_v2.dta`, and `wave_4_nurse_data.dta` directly under `ELSA_DATA_DIR`. Do not copy source data into this repository.
 
 ## Software
 
@@ -77,6 +84,7 @@ All participant-level intermediate files and results are written under `BMI_BP_O
 - Random seeds are fixed where resampling is used.
 - Cohort-specific models are fitted independently before meta-analysis.
 - The code preserves treatment-aware five-state outcomes and harmonized three-state sensitivity definitions.
+- Cross-validation folds group repeated observations by participant. They do not group different participants from the same family, community, or sampling unit; the manuscript treats this as a limitation.
 
 ## CHNS acknowledgment
 
